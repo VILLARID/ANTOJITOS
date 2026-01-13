@@ -3,42 +3,42 @@
         "category": "Pollos",
         "name": "1/4 Pollo a la Brasa",
         "price": 18.50,
-        "img": "public/Menu/1_4Brasa.png",
+        "img": "/Menu/1_4Brasa.png",
         "description": "1/4 Pollo a la Brasa, papas fritas, gaseosa personal y ensalada."
     },
     {
         "category": "Pollos",
         "name": "1/8 Pollo a la Brasa",
         "price": 12.00,
-        "img": "public/Menu/1_8Brasa.png",
+        "img": "/Menu/1_8Brasa.png",
         "description": "1/8 Pollo a la Brasa, papas fritas, gaseosa personal y ensalada."
     },
     {
         "category": "Pollos",
         "name": "1 Pollo a la Brasa",
         "price": 69.00,
-        "img": "public/Menu/1Brasa.png",
+        "img": "/Menu/1Brasa.png",
         "description": "1 Pollo a la Brasa, papas fritas, gaseosa personal y ensalada."
     },
     {
         "category": "Pollos",
         "name": "1/2 Pollo a la Brasa",
         "price": 22.00,
-        "img": "public/Menu/1_2Brasa.png",
+        "img": "/Menu/1_2Brasa.png",
         "description": "1/2 Pollo a la Brasa, papas fritas, gaseosa personal y ensalada."
     },
     {
         "category": "Pollos",
         "name": "Banguete Familiar",
         "price": 97.00,
-        "img": "public/Menu/Banquete.png",
+        "img": "/Menu/Banquete.png",
         "description": "1 Pollo a la Brasa, 1/2 Pollo a la brasa, papas fritas, gaseosa 3 Litros y ensalada."
     },
     {
         "category": "Pollos",
         "name": "Monstrito Personal",
         "price": 24.00,
-        "img": "public/Menu/Monstrito.png",
+        "img": "/Menu/Monstrito.png",
         "description": "1 Mostrito, papas fritas, gaseosa personal y ensalada."
     }
 ]
