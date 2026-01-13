@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 import Background from '../assets/Home/Background.png'
 import Lower from '../assets/Home/Lower.png'
 import TradicionPeruana from '../assets/Home/TradicionPeruana.png'
@@ -9,6 +12,22 @@ function Home() {
 
     const cardClass = "flex flex-col gap-5 border rounded-md p-[2vh] items-center hover:scale-105 duration-300 cursor-pointer w-50";
 
+    const openModal = (title, img, description) => {
+        Swal.fire({
+            title,
+            text: description,
+            imageUrl: img,
+            imageWidth: 220,
+            background: "#1C1C1C",
+            color: "#ffffff",
+            confirmButtonColor: "#ED6B00",
+            customClass: {
+                popup: "rounded-xl",
+                confirmButton: "rounded-lg px-4 py-2 font-semibold"
+            }
+        });
+    };
+
     return (
         <>
             <div
@@ -19,10 +38,29 @@ function Home() {
             <div className='relative flex-col flex z-10 h-screen justify-center w-1/3 ml-[10vh] select-none gap-5'>
                 <h1 className='text-5xl font-bold font-serif'>¡El autentico sabor del pollo a la brasa que te hace agua la boca!</h1>
                 <div className='flex gap-10 font'>
-                    <button className='bg-[#ED6B00] rounded-2xl px-4 py-3 cursor-pointer hover:bg-[#CC5E00] duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] hover:scale-105'>
-                        VER MENÚ COMPLETO
-                    </button>
-                    <button className="bg-[#1C1C1C] border rounded-2xl px-4 py-3 cursor-pointer hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:scale-105 transition duration-300">
+                    <Link to="/menu">
+                        <button className='bg-[#ED6B00] rounded-2xl px-4 py-3 cursor-pointer hover:bg-[#CC5E00] duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] hover:scale-105'>
+                            VER MENÚ COMPLETO
+                        </button>
+                    </Link>
+
+                    <button
+                        onClick={() => {
+                            Swal.fire({
+                                icon: "info",
+                                title: "Función no disponible",
+                                text: "Esta función no está integrada por el momento.",
+                                background: "#1C1C1C",
+                                color: "#ffffff",
+                                confirmButtonColor: "#ED6B00",
+                                customClass: {
+                                    popup: "rounded-xl",
+                                    confirmButton: "rounded-lg px-4 py-2 font-semibold"
+                                }
+                            });
+                        }}
+                        className="bg-[#1C1C1C] border rounded-2xl px-4 py-3 cursor-pointer hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:scale-105 transition duration-300"
+                    >
                         HAZ TU PEDIDO AHORA
                     </button>
                 </div>
@@ -36,11 +74,31 @@ function Home() {
                 <div className='flex flex-col'>
                     <h2 className='text-start text-2xl font-bold p-10'>Nuestra Especialidad</h2>
                     <div className='flex justify-around w-full gap-20'>
-                        <div className={cardClass}>
+
+                        <div
+                            className={cardClass}
+                            onClick={() =>
+                                openModal(
+                                    "Tradición Peruana",
+                                    TradicionPeruana,
+                                    "Nuestro pollo a la brasa con el auténtico toque peruano."
+                                )
+                            }
+                        >
                             <img src={TradicionPeruana} alt="Tradicion Peruana" className='w-30 h-30' />
-                            <p className='text-center select-none'>Tradicion Peruana</p>
+                            <p className='text-center select-none'>Tradición Peruana</p>
                         </div>
-                        <div className={cardClass}>
+
+                        <div
+                            className={cardClass}
+                            onClick={() =>
+                                openModal(
+                                    "Aderezo Mágico",
+                                    AderezoMagico,
+                                    "Sazonado con una receta secreta que resalta los sabores."
+                                )
+                            }
+                        >
                             <img src={AderezoMagico} alt="Aderezo Magico" className='w-30 h-30' />
                             <p className='text-center select-none'>Aderezo Mágico</p>
                         </div>
